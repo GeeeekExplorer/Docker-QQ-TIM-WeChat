@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  tim-wechat:
+    build: .
+    user: docker
+    ipc: host
+    devices:
+      - /dev/snd
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME:$HOME
+      - "$HOME/Documents/Tencent Files:/home/docker/Tencent Files"
+      - "$HOME/Documents/WeChat Files:/home/docker/WeChat Files"
+    environment:
+      - DISPLAY=unix$DISPLAY
+      - INPUT_METHOD=$INPUT_METHOD
+      - XMODIFIERS=$XMODIFIERS
+      - QT_IM_MODULE=$QT_IM_MODULE
+      - GTK_IM_MODULE=$GTK_IM_MODULE
+      - AUDIO_GID=996
+      - VIDEO_GID=985
+      - GID=1000
+      - UID=1000
+    command: bash -c "./tim.sh ; tail -f /dev/null"
+ 
