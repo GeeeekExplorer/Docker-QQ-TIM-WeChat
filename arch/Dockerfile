@@ -6,8 +6,8 @@ RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && sed -i '/\[multilib\]/!{p;d;};n;n;a [archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch\n' /etc/pacman.conf \
  && pacman-key --init && pacman -Syu --noconfirm && pacman -S --noconfirm archlinuxcn-keyring \
  && pacman -S --noconfirm yay \
- && echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
- && useradd -m -G wheel $USER
+ && echo "$USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
+ && useradd -m $USER
 USER $USER
 WORKDIR /home/$USER
 RUN yay -S --noconfirm wqy-zenhei deepin-wine-tim

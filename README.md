@@ -56,3 +56,13 @@ docker-compose restart tim-wechat
 ```bash
 docker-compose exec tim-wechat bash
 ```
+
+重新生成并启动容器：
+```bash
+docker-compose up --build -d
+```
+
+删除容器：
+```bash
+docker-compose down
+```
