@@ -34,7 +34,7 @@ sed -i "s/985/$(getent group video | cut -d: -f3)/g" docker-compose.yml
 
 建立TIM和WeChat用户文件夹：
 ```bash
-mkdir -p $HOME/Documents/{Tencent\ Files, WeChat\ Files}
+mkdir -p $HOME/Documents/{Tencent\ Files,WeChat\ Files}
 ```
 
 初次运行Docker Compose：
