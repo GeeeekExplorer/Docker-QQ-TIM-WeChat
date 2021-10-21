@@ -66,3 +66,7 @@ docker-compose up --build -d
 ```bash
 docker-compose down
 ```
+
+## 致谢
+
+感谢[Wine](https://www.winehq.org/)为类UNIX平台运行Windows程序作出的努力，[Deepin](https://www.deepin.org/)对其的进一步优化和对TIM、WeChat的适配，以及Arch用户[Codist](https://aur.archlinux.org/account/Codist)提供和维护的AUR包。
