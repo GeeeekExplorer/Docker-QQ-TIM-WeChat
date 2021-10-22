@@ -42,7 +42,7 @@ mkdir -p $HOME/Documents/{Tencent\ Files,WeChat\ Files}
 docker-compose up -d
 ```
 
-Ubuntu的TIM和WeChat自动安装，Arch的TIM需要点击安装，启动可能报错：
+Ubuntu的TIM和WeChat自动安装，Arch的需要点击安装，TIM启动可能报错：
 
 ![fail](asset/fail.png)
 
