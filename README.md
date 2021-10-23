@@ -4,7 +4,7 @@
 
 在任意Linux发行版上通过Docker运行基于Deepin Wine的TIM和WeChat！
 
-目前已经完成TIM适配，WeChat还在调试。
+~~目前已经完成TIM适配，WeChat还在调试。~~
 
 ## 依赖
 
@@ -62,9 +62,9 @@ docker-compose exec tim-wechat bash
 docker-compose up --build -d
 ```
 
-删除容器：
+关闭并删除容器和镜像：
 ```bash
-docker-compose down
+docker-compose down --rmi all
 ```
 
 ## 致谢

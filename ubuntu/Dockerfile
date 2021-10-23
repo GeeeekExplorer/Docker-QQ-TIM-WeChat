@@ -13,11 +13,11 @@ RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && useradd -m $USER
 RUN dpkg --add-architecture i386 \
  && apt update && apt upgrade -y \
- && apt install --no-install-recommends -y com.qq.office.deepin \
+ && apt install --no-install-recommends -y com.qq.office.deepin com.qq.weixin.deepin \
  && rm -rf /var/lib/apt/lists/*
 USER $USER
 WORKDIR /home/$USER
 RUN cp /opt/apps/com.qq.office.deepin/files/run.sh tim.sh && ./tim.sh \
  && mkdir -p .deepinwine/Deepin-TIM/drive_c/Program\ Files/Tencent/TIM/ \
  && ln -s ~/Tencent\ Files .deepinwine/Deepin-TIM/drive_c/Program\ Files/Tencent/TIM/Users \
- # && cp /opt/apps/com.qq.weixin.deepin/files/run.sh wechat.sh \
+ && cp /opt/apps/com.qq.weixin.deepin/files/run.sh wechat.sh
