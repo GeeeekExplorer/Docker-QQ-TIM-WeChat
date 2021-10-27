@@ -70,15 +70,6 @@ docker-compose down --rmi all
 
 不要忘记执行`xhost +`，特别是电脑重启以后。
 
-### Arch的TIM启动报错
-
-Arch第一次启动TIM可能报错：
-
-![fail](asset/fail.png)
-
-执行上面重启命令即可：
-
-![success](asset/success.png)
 ### GNOME系统托盘
 
 依赖[TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)解决，Debian系通过下面命令安装：
@@ -94,6 +85,22 @@ sudo apt install gnome-shell-extension-top-icons-plus
 ### 文件传输
 
 宿主机用户目录已经挂载在容器的`/home`目录下，可供发送文件。TIM和WeChat的数据目录也被挂载或链接，位于宿主机`~/Documents`，方便接收文件。
+
+### Arch的TIM启动报错
+
+Arch第一次启动TIM可能报错：
+
+![fail](asset/fail.png)
+
+执行上面重启命令即可：
+
+![success](asset/success.png)
+
+### Wine程序错误
+
+遇到以下错误无需理会直接关闭：
+
+![error](asset/error.png)
 
 ### 程序闪退
 
