@@ -1,8 +1,10 @@
-# Docker TIM WeChat
+# Docker QQ TIM WeChat
 
 ## 简介
 
-在任意Linux发行版上通过Docker运行基于Deepin Wine的TIM和WeChat！
+在任意Linux发行版上通过Docker运行基于Deepin Wine的QQ、TIM和WeChat！
+
+![qq](asset/qq.png)
 
 ![tim](asset/tim.png)
 
@@ -16,7 +18,7 @@
 
 ## 使用
 
-本项目使用Arch或Ubuntu镜像，根据个人喜好选择均可，这里以Arch为例。
+本项目使用Arch或Ubuntu镜像，根据个人喜好选择均可，这里以Arch为例。QQ+WeChat或TIM+WeChat两种组合任选，下面以后者为例。
 
 允许其他用户图形显示：
 ```bash
@@ -25,7 +27,7 @@ xhost +
 
 进入对应目录：
 ```bash
-cd arch
+cd arch/tim-wechat
 ```
 
 替换音视频组ID：
@@ -34,7 +36,7 @@ sed -i "s/996/$(getent group audio | cut -d: -f3)/g" docker-compose.yml
 sed -i "s/985/$(getent group video | cut -d: -f3)/g" docker-compose.yml
 ```
 
-建立TIM和WeChat用户文件夹：
+建立用户数据文件夹：
 ```bash
 mkdir -p $HOME/Documents/{Tencent\ Files,WeChat\ Files}
 ```
@@ -46,12 +48,12 @@ docker-compose up -d
 
 以后运行只需重启容器：
 ```bash
-docker-compose restart tim-wechat
+docker-compose restart tencent
 ```
 
 如需调试进入容器：
 ```bash
-docker-compose exec tim-wechat bash
+docker-compose exec tencent bash
 ```
 
 重新生成并启动容器：
@@ -84,7 +86,7 @@ sudo apt install gnome-shell-extension-top-icons-plus
 
 ### 文件传输
 
-宿主机用户目录已经挂载在容器的`/home`目录下，可供发送文件。TIM和WeChat的数据目录也被挂载或链接，位于宿主机`~/Documents`，方便接收文件。
+宿主机用户目录已经挂载在容器的`/home`目录下，可供发送文件。腾讯用户数据目录也被挂载或链接，位于宿主机`~/Documents`，方便接收文件。
 
 ### Arch的TIM启动报错
 
@@ -104,9 +106,9 @@ Arch第一次启动TIM可能报错：
 
 ### 程序闪退
 
-TIM或WeChat后台运行有时闪退，原因目前还不清楚，通过重启容器解决。
+程序后台运行有时闪退，原因目前还不清楚，通过重启容器解决。
 
 
 ## 致谢
 
-感谢[Wine](https://www.winehq.org/)为类UNIX平台运行Windows程序作出的努力，[Deepin](https://www.deepin.org/)对其的进一步优化和对TIM、WeChat的适配，以及Arch用户[Codist](https://aur.archlinux.org/account/Codist)提供和维护的AUR包。
+感谢[Wine](https://www.winehq.org/)为类UNIX平台运行Windows程序作出的努力，[Deepin](https://www.deepin.org/)对其的进一步优化和对QQ、TIM、WeChat的适配，以及Arch用户[Vufa](https://aur.archlinux.org/account/Vufa)提供和维护的AUR包。

@@ -1,0 +1,11 @@
+Package: *
+Pin: origin community-packages.deepin.com
+Pin-Priority: 1
+
+Package: *
+Pin: origin community-store-packages.deepin.com
+Pin-Priority: 1
+
+Package: *
+Pin: origin d.store.deepinos.org.cn
+Pin-Priority: 1

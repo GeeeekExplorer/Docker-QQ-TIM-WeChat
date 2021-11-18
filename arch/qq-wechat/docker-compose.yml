@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  tim-wechat:
+  tencent:
     build: .
     user: docker
     ipc: host
@@ -21,5 +21,4 @@ services:
       - VIDEO_GID=985
       - GID=1000
       - UID=1000
-    command: bash -c "LC_ALL=zh_CN.UTF-8 ./tim.sh ; LC_ALL=zh_CN.UTF-8 ./wechat.sh ; tail -f /dev/null"
- 
+    command: bash -c "./qq.sh ; ./wechat.sh ; tail -f /dev/null"
